@@ -8,6 +8,7 @@
   * [Authenticating](rest-api/authenticating.md)
   * [Account](rest-api/account.md)
   * [Trading](rest-api/trading.md)
+  * [Models](rest-api/models.md)
 * [Websocket](websocket.md)
 * [Guides](guides/README.md)
   * [Authentication Guide](guides/authentication-guide.md)
