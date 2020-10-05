@@ -4,6 +4,17 @@ description: All endpoints in this section require authentication
 
 # Trading
 
+### Order types
+
+`Market` — an order that the Client makes through Order Book to buy or sell Symbol immediately at the best price currently available. The Price field should be missing if the order type is Market. 
+
+`Limit` — an order placed by Client through Order Book to buy or sell an amount of current trading pair at a specified price or better. Both quantity and price fields should be filled if the order type is Limit.  Because the limit order is not a market order, it may not be executed if the price set by the Client cannot be met during the period of time, in which the order is left open.  After being placed, Limit orders can be:
+
+1. Fully executed immediately
+2. Not executed immediately, and left open to be fully of partially executed, or cancelled
+3. Partially executed immediately and have open outstanding amount waiting to be fully or partially executed, or cancelled.
+4. Fill-or-Kill - cancelled completely if not executed immediately.
+
 ## Get trades
 
 #### Description
