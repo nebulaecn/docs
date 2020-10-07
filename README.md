@@ -4,6 +4,14 @@ description: 'This is the official Nebula API document, and will be continue upd
 
 # Introduction
 
+## API Introduction
+
+Welcome to Nebula API！
+
+This is the official Nebula API document, and will be continue updating. All changes are available in [Change Log section](changel-log.md).
+
+The best option to get to know the API is to start with the [Getting Start section](getting-start.md).
+
 ## General
 
 ![](.gitbook/assets/image%20%286%29.png)
@@ -39,16 +47,6 @@ Nebula aggregates all liquidity in one place offering you best price, not just r
 ![](.gitbook/assets/image%20%289%29.png)
 
 The funds are debited centrally and directly upon execution of the order. You do not need to preallocate funds to each provider participating in the network.
-
-
-
-## API Introduction
-
-Welcome to Nebula API！
-
-This is the official Nebula API document, and will be continue updating. All changes are available in [Change Log section](changel-log.md).
-
-The best option to get to know the API is to start with the [Getting Start section](getting-start.md).
 
 
 
