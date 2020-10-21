@@ -14,3 +14,7 @@
   * [Authentication Guide](guides/authentication-guide.md)
 * [Changel Log](changel-log.md)
 
+## BaseApp Manual
+
+* [User interfaces of the platform](baseapp-manual/user-interfaces-of-the-platform.md)
+
