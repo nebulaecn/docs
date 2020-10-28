@@ -17,5 +17,4 @@
 ## User Manual
 
 * [User interfaces of the platform](user-manual/user-interfaces-of-the-platform.md)
-* [Draft Manual](user-manual/draft-manual.md)
 
