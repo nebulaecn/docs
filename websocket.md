@@ -218,7 +218,7 @@ Here is structure of `Order` event:
 | Field | Description |
 | :--- | :--- |
 | `id` | Unique order id. |
-| `market` | The market in which the order is placed. \(In peatio `market_id`\) |
+| `market` | The market in which the order is placed. \(In backend `market_id`\) |
 | `order_type` | Order type, either `limit` or `market`. |
 | `price` | Order price. |
 | `avg_price` | Order average price. |
@@ -230,7 +230,7 @@ Here is structure of `Order` event:
 | `updated_at` | Order create time. |
 | `trades_count` | Trades with this order. |
 | `kind` | Type of order, either `bid` or `ask`. \(Deprecated\) |
-| `at` | Order create time. \(Deprecated\) \(In peatio `created_at`\) |
+| `at` | Order create time. \(Deprecated\) \(In backend`created_at`\) |
 
 **Trade**
 
@@ -242,7 +242,7 @@ Here is structure of `Trade` event:
 | `price` | Price for each unit. |
 | `amount` | The amount of trade. |
 | `total` | The total of trade \(volume \* price\). |
-| `market` | The market in which the trade is placed. \(In peatio market\_id\) |
+| `market` | The market in which the trade is placed. \(In backend market\_id\) |
 | `side` | Type of order in trade that related to current user `sell` or `buy`. |
 | `taker_type` | Order side of the taker for the trade, either `buy` or `sell`. |
 | `created_at` | Trade create time. |
@@ -250,7 +250,7 @@ Here is structure of `Trade` event:
 
 #### Development <a id="development"></a>
 
-Start ranger websocket server using following command in peatio-core gem:
+Start ranger websocket server using following command in backend-core gem:
 
 ```text
 $ ./bin/peatio service start ranger
