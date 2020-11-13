@@ -77,15 +77,15 @@ After filling the form, a user needs to click `Sign up` to send a registration r
 
 ## 2. Profile
 
-The profile menu consists of three windows: `Account`, `My API Keys` and `Account activity`. Account window contains profile information and tools to manage the account.
+The profile menu consists of three windows: `Security settings`, `My API Keys` and `Account activity`. Account window contains profile information and tools to manage the account.
 
 ![](../.gitbook/assets/image%20%2810%29.png)
 
-#### Description of the `Account` window: <a id="description-of-the-account-window"></a>
+#### Description of the `Security settings` window: <a id="description-of-the-account-window"></a>
 
 ![](../.gitbook/assets/image%20%2811%29.png)
 
-* On the left side of the account window, shows an `Email` that belong to a user.
+* On the left side of the security settings window, shows an `Email` that belong to a user.
 * Under `Email` shows `UID` of a user. `UID` is a unique identifier on a user on the platform.
 * The next is a `Password` field with the edit-button on the right side. Clicking the edit button brings up a modal window using. To change a password, a user needs to type an old password in the `Old Password` filed and a new password in `New Password` and `Confirm Password` fields. After that, a user needs to press the `CHANGE` button to apply password changes.
 
@@ -120,4 +120,20 @@ If a user wants to disable 2FA, he needs to click the 2FA switch button. The pla
 *  * If there are any errors, they will be shown in company verification block so user can check them and resubmit the verification. Otherwise, all data will be validated within 24 hours.
 
 ![](../.gitbook/assets/image%20%2825%29.png)
+
+#### Description of the `API Token` window: <a id="description-of-the-account-window"></a>
+
+`API Token` is a window for API keys management. To be able to create and manage API keys, a user needs to enable 2FA.
+
+To create a new API key a user needs to click the `Create new` button, then pops up a window for 2FA code in which a user needs to enter 2FA code.
+
+![My API Keys](../.gitbook/assets/image%20%2827%29.png)
+
+
+
+![](../.gitbook/assets/image%20%2826%29.png)
+
+
+
+
 
