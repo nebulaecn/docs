@@ -66,7 +66,7 @@ If other error occurred during the message handling server throws an error
 }
 ```
 
-**Note:** Peatio websocket API supports authentication only Bearer type of JWT token.
+**Note:** Websocket API supports authentication only Bearer type of JWT token.
 
 **Example** of authentication message:
 
@@ -248,25 +248,7 @@ Here is structure of `Trade` event:
 | `created_at` | Trade create time. |
 | `order_id` | User order identifier in trade. |
 
-#### Development <a id="development"></a>
 
-Start ranger websocket server using following command in backend-core gem:
-
-```text
-$ ./bin/peatio service start ranger
-```
-
-Now we can test authentication with [wscat](https://github.com/websockets/wscat):
-
-**Connect to public channel:**
-
-```text
-$ wscat -n -c 'ws://ws.app.local:8080/api/ranger/v2?stream=usdeth'
-```
-
-**Connect to private channel:**
-
-Authorization header will be injected automatically by ambassador so we could subscribe to private channels. `bash $ wscat -n -c 'ws://ws.app.local:8080/api/ranger/v2?stream=trade'`
 
 ## 
 

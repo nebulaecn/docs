@@ -11,10 +11,7 @@
   * [Models](rest-api/models.md)
 * [WebSocket API](websocket.md)
 * [Guides](guides/README.md)
+  * [User interfaces of the platform](guides/user-interfaces-of-the-platform.md)
   * [Authentication Guide](guides/authentication-guide.md)
-* [Changel Log](changel-log.md)
-
-## User Manual
-
-* [User interfaces of the platform](user-manual/user-interfaces-of-the-platform.md)
+* [Change Log](changel-log.md)
 
