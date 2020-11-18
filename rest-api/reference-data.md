@@ -11,7 +11,7 @@ Returns withdraw limits table as paginated collection
 #### HttpRequest
 
 ```text
-GET https://api.nebulaecn.com/v1/public/withdraw_limits
+GET https://trade.nebulaecn.com/api/v2/backend/public/
 ```
 
 **Parameters**
@@ -40,7 +40,7 @@ Returns trading\_fees table as paginated collection
 #### HttpRequest
 
 ```text
-GET https://api.nebulaecn.com/v1/public/trading_fees
+GET https://trade.nebulaecn.com/api/v2/backend/public/trading_fees
 ```
 
 **Parameters**
@@ -69,7 +69,7 @@ Get application readiness status
 #### HttpRequest
 
 ```text
-GET https://api.nebulaecn.com/v1/public/health/ready
+GET https://trade.nebulaecn.com/api/v2/backend/public/health/ready
 ```
 
 **Responses**
@@ -89,7 +89,7 @@ Get server current time, in seconds since Unix epoch.
 #### HttpRequest
 
 ```text
-GET https://api.nebulaecn.com/v1/public/timestamp
+GET https://trade.nebulaecn.com/api/v2/backend/public/timestamp
 ```
 
 **Responses**

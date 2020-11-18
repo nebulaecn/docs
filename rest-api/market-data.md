@@ -11,7 +11,7 @@ Returns hash of minimum levels and the privileges they provide.
 #### HttpRequest
 
 ```text
-GET https://api.nebulaecn.com/v1/public/member-levels
+GET https://trade.nebulaecn.com/api/v2/backend/public/member-levels
 ```
 
 **Responses**
@@ -29,7 +29,7 @@ Get ticker of specific market.
 #### HttpRequest
 
 ```text
-GET https://api.nebulaecn.com/v1/public/markets/{market}/tickers
+GET https://trade.nebulaecn.com/api/v2/backend/public/markets/{market}/tickers
 ```
 
 **Parameters**
@@ -71,7 +71,7 @@ Get OHLC\(k line\) of specific market.
 #### HttpRequest
 
 ```text
-GET https://api.nebulaecn.com/v1/public/markets/{market}/k-line
+GET https://trade.nebulaecn.com/api/v2/backend/public/markets/{market}/k-line
 ```
 
 **Parameters**
@@ -99,7 +99,7 @@ Get depth of specified market. Both asks and bids are sorted from highest price 
 #### HttpRequest
 
 ```text
-GET https://api.nebulaecn.com/v1/public/markets/{market}/depth
+GET https://trade.nebulaecn.com/api/v2/backend/public/markets/{market}/depth
 ```
 
 **Parameters**
@@ -151,7 +151,7 @@ Get the order book of specified market.
 #### HttpRequest
 
 ```text
-GET https://api.nebulaecn.com/v1/public/markets/{market}/order-book
+GET https://trade.nebulaecn.com/api/v2/backend/public/markets/{market}/order-book
 ```
 
 **Parameters**
@@ -177,7 +177,7 @@ Get all available markets.
 #### HttpRequest
 
 ```text
-GET https://api.nebulaecn.com/v1/public/markets
+GET https://trade.nebulaecn.com/api/v2/backend/public/markets
 ```
 
 **Parameters**
@@ -211,7 +211,7 @@ Get list of currencies
 #### HttpRequest
 
 ```text
-GET https://api.nebulaecn.com/v1/public/currencies
+GET https://trade.nebulaecn.com/api/v2/backend/public/currencies
 ```
 
 **Parameters**
@@ -240,7 +240,7 @@ Get a currency
 #### HttpRequest
 
 ```text
-GET https://api.nebulaecn.com/v1/public/currencies/{id}
+GET https://trade.nebulaecn.com/api/v2/backend/public/currencies/{id}
 ```
 
 **Parameters**
