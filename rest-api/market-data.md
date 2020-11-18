@@ -53,7 +53,7 @@ Get ticker of all markets \(For response doc see /:market/tickers/ response\).
 #### HttpRequest
 
 ```text
-GET https://api.nebulaecn.com/v1/public/markets/tickers
+GET https://trade.nebulaecn.com/api/v2/backend/public/markets/tickers
 ```
 
 **Responses**
@@ -124,7 +124,7 @@ Get recent trades on market, each trade is included only once. Trades are sorted
 #### HttpRequest
 
 ```text
-GET https://api.nebulaecn.com/v1/public/markets/{market}/trades
+GET https://trade.nebulaecn.com/api/v2/backend/public/markets/{market}/trades
 ```
 
 **Parameters**
