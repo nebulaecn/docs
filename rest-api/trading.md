@@ -24,7 +24,7 @@ This endpoint retrieves your executed trades with its price, volume, and directi
 #### HttpRequest
 
 ```text
-GET https://trade.nebulaecn.com/api/v2/backend/market/trades
+GET https://api.nebulaecn.com/v1/market/trades
 ```
 
 #### Request Parameters
@@ -53,7 +53,7 @@ Cancel all my orders.
 #### HttpRequest
 
 ```text
-POST https://trade.nebulaecn.com/api/v2/backend/market/orders/cancel
+POST https://api.nebulaecn.com/v1/market/orders/cancel
 ```
 
 #### Request Parameters
@@ -78,7 +78,7 @@ Cancel an order.
 #### HttpRequest
 
 ```text
-POST https://trade.nebulaecn.com/api/v2/backend/market/orders/{id}/cancel
+POST https://api.nebulaecn.com/v1/market/orders/{id}/cancel
 ```
 
 #### Request Parameters
@@ -102,7 +102,7 @@ Create a Sell/Buy order.
 #### HttpRequest
 
 ```text
-POST https://trade.nebulaecn.com/api/v2/backend/market/orders
+POST https://api.nebulaecn.com/v1/market/orders
 ```
 
 #### Request Parameters
@@ -130,7 +130,7 @@ Get your orders, result is paginated.
 #### HttpRequest
 
 ```text
-GET https://trade.nebulaecn.com/api/v2/backend/market/orders
+GET https://api.nebulaecn.com/v1/market/orders
 ```
 
 #### Request Parameters
@@ -166,7 +166,7 @@ Get information of specified order.
 #### HttpRequest
 
 ```text
-GET https://trade.nebulaecn.com/api/v2/backend/market/orders/{id}
+GET https://api.nebulaecn.com/v1/market/orders/{id}
 ```
 
 #### Request Parameters
