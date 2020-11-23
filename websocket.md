@@ -85,7 +85,7 @@ You can specify streams to subscribe to by passing the `stream` GET parameter in
 example:
 
 ```text
-wss://demo.openware.com/api/v2/ranger/public/?stream=global.tickers&stream=ethusd.trades
+wss://trade.nebulaecn.com/api/v2/stream/public/?stream=global.tickers&stream=ethusd.trades
 ```
 
 This will subscribe you to _tickers_ and _trades_ events from _ethusd_ market once the connection is established.
