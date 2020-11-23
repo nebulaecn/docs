@@ -4,7 +4,7 @@ This section is under development
 
 ## Get API key using the interface
 
-* Enable Two-factor authentication [https://api.nebulaecn.com/security/2fa](https://api.nebulaecn.com/security/2fa)
+* Enable Two-factor authentication [https://trade.nebulaecn.com/security/2fa](https://api.nebulaecn.com/security/2fa)
 
 ![](../.gitbook/assets/image%20%281%29.png)
 
