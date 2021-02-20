@@ -389,7 +389,7 @@ Get list of user accounts
 #### HttpRequest
 
 ```text
-GET https://trade.nebulaecn.com/api/v2/auth/account/balances/
+GET https://trade.nebulaecn.com/api/v2/backend/account/balances/
 ```
 
 **Parameters**
