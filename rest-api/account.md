@@ -9,7 +9,7 @@ Get assets pnl calculated into one currency
 #### HttpRequest
 
 ```text
-GET https://trade.nebulaecn.com/api/v2/backend/account/stats/pnl
+GET https://trade.nebulaecn.com/api/v2/auth/account/stats/pnl
 ```
 
 **Parameters**
