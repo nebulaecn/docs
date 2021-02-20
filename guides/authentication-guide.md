@@ -35,7 +35,7 @@ date +%s%3N
 #### Sample Request below:
 
 ```text
-curl -X GET https://api.nebulaecn.com/v1/account/balances \
+curl -X GET https://trade.nebulaecn.com/api/v2/backend/account/balances \
 -H "X-Auth-Apikey: "Your Api Key" \
 -H "X-Auth-Nonce: "Nonce" \
 -H "X-Auth-Signature: "HMAC-SHA256 signature"
