@@ -24,7 +24,7 @@ This endpoint retrieves your executed trades with its price, volume, and directi
 #### HttpRequest
 
 ```text
-GET https://api.nebulaecn.com/v1/market/trades
+GET https://trade.nebulaecn.com/api/v2/backend/market/trades
 ```
 
 #### Request Parameters
@@ -44,82 +44,110 @@ GET https://api.nebulaecn.com/v1/market/trades
 | :--- | :--- | :--- |
 | 200 | Get your executed trades. Trades are sorted in reverse creation order. | [Trade](trading.md#trades) |
 
-## Cancel orders
-
-#### Description
-
-Cancel all my orders.
-
-#### HttpRequest
-
-```text
-POST https://api.nebulaecn.com/v1/market/orders/cancel
-```
-
-#### Request Parameters
-
-| Name | Located In | Description | Required | Schema |
-| :--- | :--- | :--- | :--- | :--- |
-| market | formData |  | No | string |
-| side | formData | If present, only sell orders \(asks\) or buy orders \(bids\) will be cancelled. | No | string |
-
-#### Response Content
-
-| Code | Description | Schema |
-| :--- | :--- | :--- |
-| 201 | Get your executed trades. Trades are sorted in reverse creation order. | [Trade](trading.md#trades) |
-
 ## Cancel an order
 
 #### Description
 
-Cancel an order.
+Submit cancel request, cancels order from orderbook.
 
 #### HttpRequest
 
 ```text
-POST https://api.nebulaecn.com/v1/market/orders/{id}/cancel
+POST https://trade.nebulaecn.com/api/v2/trading/market/orders/cancel/{id|uuid}
 ```
 
-#### Request Parameters
+**Responses**
 
-| Name | Located In | Description | Required | Schema |
-| :--- | :--- | :--- | :--- | :--- |
-| id | path |  | Yes | string |
-
-#### Response Content
-
-| Code | Description |
+| code | description |
 | :--- | :--- |
-| 201 | Cancel an order. |
+| 201 | Your cancel request was submitted and awaits for processing |
+| 422 | Invalid request, make sure every mandatory fields are present |
+| 500 | Internal Server Error |
+
+## Cancel orders
+
+#### Description
+
+Submit cancel request, cancels all your orders from orderbook.
+
+#### HttpRequest
+
+```text
+POST https://trade.nebulaecn.com/api/v2/trading/market/orders/cancel
+```
+
+**Params**
+
+| param | type | desc |
+| :--- | :--- | :--- |
+| market | string | market id |
+| side | string | buy or sell |
+
+**Responses**
+
+| code | description |
+| :--- | :--- |
+| 200 | Your cancel request was submitted and awaits for processing |
+| 422 | Invalid request, make sure every mandatory fields are present |
+| 500 | Internal Server Error |
 
 ## Create an order
 
 #### Description
 
-Create a Sell/Buy order.
+Submit a new order to API. Notice that while the response from the server is ok, the order can still be rejected by the matching engine. You should wait the confirmation from the websocket to be sure that your order has been added to the orderbook.
 
 #### HttpRequest
 
 ```text
-POST https://api.nebulaecn.com/v1/market/orders
+POST https://trade.nebulaecn.com/api/v2/trading/market/orders
 ```
 
-#### Request Parameters
+**Params**
 
-| Name | Located In | Description | Required | Schema |
-| :--- | :--- | :--- | :--- | :--- |
-| market | formData |  | Yes | string |
-| side | formData |  | Yes | string |
-| volume | formData |  | Yes | double |
-| ord\_type | formData |  | No | string |
-| price | formData |  | Yes | double |
+| param | type | desc |
+| :--- | :--- | :--- |
+| market | string | market id |
+| side | string | buy or sell |
+| amount | decimal | valid decimal value |
+| type | string | market, limit, post\_only |
+| price | decimal | valid decimal value |
 
 #### Response Content
 
-| Code | Description | Schema |
+| Code | Description |
+| :--- | :--- |
+| 201 | Your order was submitted and awaits for processing |
+| 400 | Bad request, make sure the JSON syntax of your request is correct |
+| 422 | Invalid request, make sure every mandatory fields are present |
+| 500 | Internal Server Error |
+
+## Create a list of orders
+
+#### Description
+
+Bulk api to create a list of orders in one request. The default limit is set to 100 orders for one request, this might be configured by support.
+
+#### HttpRequest
+
+```text
+POST https://trade.nebulaecn.com/api/v2/trading/market/bulk/orders
+```
+
+**Params**
+
+| param | type | desc |
 | :--- | :--- | :--- |
-| 201 | Create a Sell/Buy order. | Order |
+| \[\] | \[\]object | array of order params \(refer to create order params\) |
+
+**Responses**
+
+| code | description |
+| :--- | :--- |
+| 201 | Your order was submitted and awaits for processing |
+| 422 | Invalid request, make sure every mandatory fields are present |
+| 413 | Request entity too large. Your request contains too much orders. |
+| 500 | Internal Server Error |
 
 ## Get orders
 
@@ -130,7 +158,7 @@ Get your orders, result is paginated.
 #### HttpRequest
 
 ```text
-GET https://api.nebulaecn.com/v1/market/orders
+GET https://trade.nebulaecn.com/api/v2/backend/market/orders
 ```
 
 #### Request Parameters
@@ -166,7 +194,7 @@ Get information of specified order.
 #### HttpRequest
 
 ```text
-GET https://api.nebulaecn.com/v1/market/orders/{id}
+GET https://trade.nebulaecn.com/api/v2/backend/market/orders/{id}
 ```
 
 #### Request Parameters

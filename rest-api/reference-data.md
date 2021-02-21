@@ -6,12 +6,12 @@
 
 **Description**
 
-Returns withdrawal limits table as paginated collection
+Returns withdraw limits table as paginated collection
 
 #### HttpRequest
 
 ```text
-GET https://trade.nebulaecn.com/api/v2/backend/public/withdraw_limits
+GET https://trade.nebulaecn.com/api/v2/backend/public/
 ```
 
 **Parameters**
