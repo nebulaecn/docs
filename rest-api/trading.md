@@ -149,6 +149,60 @@ POST https://trade.nebulaecn.com/api/v2/trading/market/bulk/orders
 | 413 | Request entity too large. Your request contains too much orders. |
 | 500 | Internal Server Error |
 
+## Cancel orders by UUID
+
+#### Description
+
+Bulk api to cancel orders.
+
+#### HttpRequest
+
+```text
+DELETE https://trade.nebulaecn.com/api/v2/trading/market/bulk/orders
+```
+
+**Params**
+
+| param | type | desc |
+| :--- | :--- | :--- |
+| \[\] | \[\]string | Order UUIDs to cancel |
+
+**Responses**
+
+| code | description |
+| :--- | :--- |
+| 200 | Your cancel requests were submitted and await for processing |
+| 422 | Invalid request, make sure every mandatory fields are present |
+| 413 | Request entity too large. Your request contains too much orders. |
+| 500 | Internal Server Error |
+
+## Cancel orders by ID
+
+#### Description
+
+Bulk api to cancel orders.
+
+#### HttpRequest
+
+```text
+DELETE https://trade.nebulaecn.com/api/v2/trading/market/bulk/orders_by_id
+```
+
+**Params**
+
+| param | type | desc |
+| :--- | :--- | :--- |
+| \[\] | \[\]integer | Array of ids to cancel |
+
+**Responses**
+
+| code | description |
+| :--- | :--- |
+| 200 | Your cancel requests were submitted and await for processing |
+| 422 | Invalid request, make sure every mandatory fields are present |
+| 413 | Request entity too large. Your request contains too much orders. |
+| 500 | Internal Server Error |
+
 ## Get orders
 
 #### Description
