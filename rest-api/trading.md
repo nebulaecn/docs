@@ -91,6 +91,18 @@ POST https://trade.nebulaecn.com/api/v2/trading/market/orders/cancel
 | 422 | Invalid request, make sure every mandatory fields are present |
 | 500 | Internal Server Error |
 
+#### Example
+
+```text
+curl -X POST https://trade.nebulaecn.com/api/v2/trading/market/orders/cancel/1 \
+-H 'Content-Type: application/json'
+```
+
+```text
+curl -X POST https://trade.nebulaecn.com/api/v2/trading/market/orders/cancel/b47d2527-5a0c-11ea-822c-1831bf9834b0 \
+-H 'Content-Type: application/json'
+```
+
 ## Create an order
 
 #### Description
@@ -122,6 +134,15 @@ POST https://trade.nebulaecn.com/api/v2/trading/market/orders
 | 422 | Invalid request, make sure every mandatory fields are present |
 | 500 | Internal Server Error |
 
+#### Example
+
+```text
+curl -X POST https://trade.nebulaecn.com/api/v2/trading/market/orders \
+  --data '{"market":"btcusd", "amount":"1.0","type":"limit", "side":"sell", "price":"1"}' \
+  -H 'Content-Type: application/json'
+{"uuid":"b436163d-5c73-11ea-be71-1831bf9834b0","side":"sell","type":"limit","market_id":"btcusd","volume":"1","price":"1","state":"pending","created_at":1583146260
+```
+
 ## Create a list of orders
 
 #### Description
@@ -149,6 +170,15 @@ POST https://trade.nebulaecn.com/api/v2/trading/market/bulk/orders
 | 413 | Request entity too large. Your request contains too much orders. |
 | 500 | Internal Server Error |
 
+#### Example
+
+```text
+curl -X POST https://trade.nebulaecn.com/api/v2/trading/market/bulk/orders \
+  --data '[{"market":"btcusd", "amount":"1.0","type":"limit", "side":"sell", "price":"1"}, {"market":"btcusd", "amount":"1.0","type":"limit", "side":"sell", "price":"1"}]' \
+-H 'Content-Type: application/json'
+[{"uuid":"b76aef45-5c73-11ea-be71-1831bf9834b0","side":"sell","type":"limit","market_id":"btcusd","volume":"1","price":"1","state":"pending","created_at":1583146265},{"uuid":"b76afa8b-5c73-11ea-be71-1831bf9834b0","side":"sell","type":"limit","market_id":"btcusd","volume":"1","price":"1","state":"pending","created_at":1583146265}]
+```
+
 ## Cancel orders by UUID
 
 #### Description
@@ -175,6 +205,15 @@ DELETE https://trade.nebulaecn.com/api/v2/trading/market/bulk/orders
 | 422 | Invalid request, make sure every mandatory fields are present |
 | 413 | Request entity too large. Your request contains too much orders. |
 | 500 | Internal Server Error |
+
+#### Example
+
+```text
+curl -X DELETE https://trade.nebulaecn.com/api/v2/trading/market/bulk/orders \
+ --data '["580d891d-5c8b-11ea-a012-1831bf9834b0", "580d891d-5c8b-11ea-a012-1831bf9834b0"]' \
+-H 'Content-Type: application/json'
+"orders.cancel.accepted"
+```
 
 ## Cancel orders by ID
 
