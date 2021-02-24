@@ -76,7 +76,7 @@ Submit cancel request, cancels all your orders from orderbook.
 POST https://trade.nebulaecn.com/api/v2/trading/market/orders/cancel
 ```
 
-**Params \(JSON\)**
+**Request Parameters \(JSON\)**
 
 | param | type | desc |
 | :--- | :--- | :--- |
@@ -115,7 +115,7 @@ Submit a new order to API. Notice that while the response from the server is ok,
 POST https://trade.nebulaecn.com/api/v2/trading/market/orders
 ```
 
-**Params \(JSON\)**
+**Request Parameters \(JSON\)**
 
 | param | type | desc |
 | :--- | :--- | :--- |
@@ -155,7 +155,7 @@ Bulk api to create a list of orders in one request. The default limit is set to 
 POST https://trade.nebulaecn.com/api/v2/trading/market/bulk/orders
 ```
 
-**Params \(JSON\)**
+**Request Parameters \(JSON\)**
 
 | param | type | desc |
 | :--- | :--- | :--- |
@@ -191,7 +191,7 @@ Bulk api to cancel orders.
 DELETE https://trade.nebulaecn.com/api/v2/trading/market/bulk/orders
 ```
 
-**Params \(JSON\)**
+**Request Parameters \(JSON\)**
 
 | param | type | desc |
 | :--- | :--- | :--- |
@@ -227,7 +227,7 @@ Bulk api to cancel orders.
 DELETE https://trade.nebulaecn.com/api/v2/trading/market/bulk/orders_by_id
 ```
 
-**Params \(JSON\)**
+**Request Parameters \(JSON\)**
 
 | param | type | desc |
 | :--- | :--- | :--- |
