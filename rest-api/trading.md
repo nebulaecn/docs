@@ -242,6 +242,15 @@ DELETE https://trade.nebulaecn.com/api/v2/trading/market/bulk/orders_by_id
 | 413 | Request entity too large. Your request contains too much orders. |
 | 500 | Internal Server Error |
 
+#### Example
+
+```text
+curl -X DELETE https://trade.nebulaecn.com/api/v2/trading/market/bulk/orders_by_id \
+--data '[1, 2, 3, 4]' \
+-H 'Content-Type: application/json'
+"orders.cancel.accepted"
+```
+
 ## Get orders
 
 #### Description
