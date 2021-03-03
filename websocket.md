@@ -250,7 +250,7 @@ Here is structure of `Trade` event:
 
 
 
-Websocket API is mounted at `/api/v2/open_finance`. If you pass a JWT header, your connection will be authenticated, otherwise it will be considered anonymous.
+Websocket API is mounted at `/api/v2/trading`. If you pass a JWT header, your connection will be authenticated, otherwise it will be considered anonymous.
 
 ### Subscribe to streams <a id="subscribe-to-streams"></a>
 
