@@ -1,6 +1,6 @@
 # WebSocket API
 
-#### API <a id="api"></a>
+## API
 
 There are two types of channels: \* Public: accessible by anyone \* Private: accessible only by given member
 
@@ -16,7 +16,7 @@ List of supported private streams \(requires authentication\): \* [`order`](http
 
 You can find a format of these events below in the doc.
 
-#### Authentication <a id="authentication"></a>
+### Authentication <a id="subscribe-to-streams"></a>
 
 Authentication happens on websocket message with following JSON structure.
 
@@ -76,9 +76,9 @@ If other error occurred during the message handling server throws an error
 }
 ```
 
-#### Streams subscription <a id="streams-subscription"></a>
+### Streams subscription <a id="subscribe-to-streams"></a>
 
-**Using parameters**
+#### **Using parameters**
 
 You can specify streams to subscribe to by passing the `stream` GET parameter in the connection URL. The parameter can be specified multiple times for subscribing to multiple streams.
 
@@ -90,7 +90,7 @@ wss://trade.nebulaecn.com/api/v2/stream/public/?stream=global.tickers&stream=eth
 
 This will subscribe you to _tickers_ and _trades_ events from _ethusd_ market once the connection is established.
 
-**Subscribe and unsubscribe events**
+#### **Subscribe and unsubscribe events**
 
 You can manage the connection subscriptions by send the following events after the connection is established:
 
@@ -100,7 +100,7 @@ Subscribe event will subscribe you to the list of streams provided:
 {"event":"subscribe","streams":["ethusd.trades","ethusd.ob-inc"]}
 ```
 
-The server confirms the subscription with the following message and provides the new list of your current subscrictions:
+The server confirms the subscription with the following message and provides the new list of your current subscriptions:
 
 ```text
 {"success":{"message":"subscribed","streams":["global.tickers","ethusd.trades","ethusd.ob-inc"]}}
@@ -112,15 +112,15 @@ Unsubscribe event will unsubscribe you to the list of streams provided:
 {"event":"unsubscribe","streams":["ethusd.trades","ethusd.ob-inc"]}
 ```
 
-The server confirms the unsubscription with the following message and provides the new list of your current subscrictions:
+The server confirms the unsubscription with the following message and provides the new list of your current subscriptions:
 
 ```text
 {"success":{"message":"unsubscribed","streams":["global.tickers","ethusd.kline-15m"]}}
 ```
 
-#### Public streams <a id="public-streams"></a>
+## Public streams
 
-**Order-Book**
+### **Order-Book**
 
 This stream sends a snapshot of the order-book at the subscription time, then it sends increments. Volumes information in increments replace the previous values. If the volume is zero the price point should be removed from the order-book.
 
@@ -159,7 +159,7 @@ Example of order-book increment message:
  }
 ```
 
-**Trades**
+### **Trades**
 
 Here is structure of `<market>.trades` event expose as array with trades:
 
@@ -188,7 +188,7 @@ Example:
 [1537370580, 0.0839, 0.0921, 0.0781, 0.0845, 0.5895]
 ```
 
-**Tickers**
+### **Tickers**
 
 Here is structure of `global.tickers` event expose as array with all markets pairs:
 
@@ -209,9 +209,9 @@ Here is structure of `global.tickers` event expose as array with all markets pai
 | `avg_price` | Average price for last 24 hours. |
 | `price_change_percent` | Average price change in percent. |
 
-#### Private streams <a id="private-streams"></a>
+## Private streams
 
-**Order**
+### **Order**
 
 Here is structure of `Order` event:
 
@@ -232,7 +232,7 @@ Here is structure of `Order` event:
 | `kind` | Type of order, either `bid` or `ask`. \(Deprecated\) |
 | `at` | Order create time. \(Deprecated\) \(In backend`created_at`\) |
 
-**Trade**
+### **Trade**
 
 Here is structure of `Trade` event:
 
@@ -249,6 +249,166 @@ Here is structure of `Trade` event:
 | `order_id` | User order identifier in trade. |
 
 
+
+Websocket API is mounted at `/api/v2/open_finance`. If you pass a JWT header, your connection will be authenticated, otherwise it will be considered anonymous.
+
+### Subscribe to streams <a id="subscribe-to-streams"></a>
+
+Example
+
+```text
+[1, 2, "subscribe", ["private", ["order", "trade", "balances"]]]
+```
+
+### Get your open orders <a id="get-your-open-orders"></a>
+
+```text
+[1, 2, "list_orders", ["btcusd"]]
+```
+
+```text
+[
+  2,
+  2,
+  "list_orders",
+  [
+    [
+      "btcusd",
+      97,
+      "6dcc2c8e-c295-11ea-b7ad-1831bf9834b0",
+      "sell",
+      "w",
+      "l",
+      "9120",
+      "0",
+      "0.25",
+      "0.25",
+      "0",
+      0,
+      1594386563
+    ]
+  ]
+]
+```
+
+#### Order response schema <a id="order-response-schema"></a>
+
+| Field | Example |
+| :--- | :--- |
+| Market | "btcusd" |
+| ID | 97 |
+| UUID | "6dcc2c8e-c295-11ea-b7ad-1831bf9834b0" |
+| Side | "sell" |
+| State | "w" |
+| Type | "l" |
+| Price | "9120" |
+| Avg. Price | "0" |
+| Volume | "0.25" |
+| Orig. Volume | "0.25" |
+| Executed Volume | "0" |
+| Trades Count | 0 |
+| Timestamp | 1594386563 |
+
+### Get order by uuids <a id="get-order-by-uuids"></a>
+
+```text
+[
+  1,
+  3,
+  "get_orders",
+  [
+    "6dcc2c8e-c295-11ea-b7ad-1831bf9834b0",
+    "4fec493d-c2a2-11ea-b670-1831bf9834b0"
+  ]
+]
+```
+
+```text
+[
+  2,
+  3,
+  "get_orders",
+  [
+    [
+      "btcusd",
+      97,
+      "6dcc2c8e-c295-11ea-b7ad-1831bf9834b0",
+      "sell",
+      "w",
+      "l",
+      "9120",
+      "0",
+      "0.25",
+      "0.25",
+      "0",
+      0,
+      1594386563
+    ],
+    [
+      "btcusd",
+      98,
+      "4fec493d-c2a2-11ea-b670-1831bf9834b0",
+      "sell",
+      "c",
+      "m",
+      "0",
+      "0",
+      "0.25",
+      "0.25",
+      "0",
+      0,
+      1594392096
+    ]
+  ]
+]
+```
+
+### Get order trades <a id="get-order-trades"></a>
+
+```text
+[1, 42, "get_order_trades", ["ab224fef-c2a2-11ea-b670-1831bf9834b0"]]
+```
+
+```text
+[
+  2,
+  42,
+  "get_order_trades",
+  [
+    [
+      "btcusd",
+      33,
+      "9120",
+      "0.25",
+      "2280",
+      100,
+      "ab224fef-c2a2-11ea-b670-1831bf9834b0",
+      "buy",
+      "buy",
+      "0.0005",
+      "btc",
+      1594392250
+    ]
+  ]
+]
+```
+
+#### Trade response schema <a id="trade-response-schema"></a>
+
+| Field | Example |
+| :--- | :--- |
+| Market | "btcusd" |
+| ID | 33 |
+| Price | "9120" |
+| Amount | "0.25" |
+| Total | "2280" |
+| OrderID | 100 |
+| OrderUUID | "ab224fef-c2a2-11ea-b670-1831bf9834b0" |
+| OrderSide | "buy" |
+| TakerSide | "buy" |
+| Fee | "0.0005" |
+| Fee Unit | "btc" |
+| Timestamp | 1594392250 |
 
 ## 
 
