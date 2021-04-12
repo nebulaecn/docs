@@ -1,5 +1,5 @@
 ---
-description: 'This is the official Nebula API document, and will be continue updating.'
+description: 'This is the official Nebula API document, and will be continuously updated.'
 ---
 
 # Introduction
