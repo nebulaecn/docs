@@ -8,12 +8,28 @@ description: All endpoints in this section require authentication
 
 `Market` — an order that the Client makes through Order Book to buy or sell Symbol immediately at the best price currently available. The Price field should be missing if the order type is Market. 
 
+
+
 `Limit` — an order placed by Client through Order Book to buy or sell an amount of current trading pair at a specified price or better. Both quantity and price fields should be filled if the order type is Limit. Because the limit order is not a market order, it may not be executed if the price set by the Client cannot be met during the period of time, in which the order is left open.  After being placed, Limit orders can be:
 
 1. Fully executed immediately
 2. Not executed immediately, and left open to be fully of partially executed, or cancelled
 3. Partially executed immediately and have open outstanding amount waiting to be fully or partially executed, or cancelled.
 4. Fill-or-Kill - cancelled completely if not executed immediately.
+
+
+
+`Stop`— a stop order is used to trigger a market sell when the market drops to your trigger price or used to trigger a market buy if the market rises to your trigger price. This is often used as a stop-loss order if the market is moving in an unfavourable direction. Stop orders will fully execute as a market order once the trigger price is reached.
+
+Example: If the current market price is 50 000, the trader in a long position might want to sell if the price drops to 49 900 to avoid further losses. A stop sell at 49 900 will be used in this case.
+
+Example: If the current market price is 50 000, the trader in a short position might want to buy if the price reaches 50 100 to avoid further losses. A stop buy at 50 100 will be used in this case.
+
+
+
+`Stop-Limit`— a stop-limit order triggers a limit order. With a stop-limit, the trader sets a stop price at which the order is triggered and a limit price at which the order may be filled. Once the stop of a stop-limit order is triggered, the limit order is automatically placed. 
+
+Example: If a trader would like to buy once the market price reaches 50 000, but not pay more than 50 100, then a stop price of 50 000 and limit price of 51 000 will be specified at the same time using a stop-limit order. If the market price reaches 50 000, the order is triggered and will match the best available asks up to 50 100. If the market price moves to 50 101 or above, then the order may go partially unfilled due to the limit price. 
 
 ## Get trades
 
