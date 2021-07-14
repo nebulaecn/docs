@@ -8,8 +8,6 @@ description: All endpoints in this section require authentication
 
 `Market` — an order that the Client makes through Order Book to buy or sell Symbol immediately at the best price currently available. The Price field should be missing if the order type is Market. Please, contact our support or your account-manager if you need market order type or additional order types.
 
-Обратитесь в саппорт или напишите своему аккаунт менеджеру если вам нужен рыночный тип ордера или другие дополнительные типы ордеров
-
 
 
 `Limit` — an order placed by Client through Order Book to buy or sell an amount of current trading pair at a specified price or better. Both quantity and price fields should be filled if the order type is Limit. Because the limit order is not a market order, it may not be executed if the price set by the Client cannot be met during the period of time, in which the order is left open.  After being placed, Limit orders can be:
