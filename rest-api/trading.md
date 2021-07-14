@@ -6,7 +6,7 @@ description: All endpoints in this section require authentication
 
 ### Order types
 
-`Market` — an order that the Client makes through Order Book to buy or sell Symbol immediately at the best price currently available. The Price field should be missing if the order type is Market. 
+`Market` — an order that the Client makes through Order Book to buy or sell Symbol immediately at the best price currently available. The Price field should be missing if the order type is Market. The market order type is disabled by default. But you can ask our support if you need it to be enabled.
 
 
 
