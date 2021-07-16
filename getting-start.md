@@ -16,9 +16,9 @@ Every user can create at  API Keys, each can be applied with either permission b
 
 ## Issuing API Credentials
 
+You can get your API credentials after passing verification process. You need to reach Level 3. That requires your email & phone to be verified, enable 2FA enabled and complete KYB.
 
-
-
+![](.gitbook/assets/image%20%2828%29.png)
 
 
 
