@@ -1,6 +1,8 @@
 # Authenticating
 
-This section is under development
+Use the link below: 
+
+[Authentication Guide](../guides/authentication-guide.md)
 
 
 
