@@ -6,7 +6,7 @@ Before you use API, you need to login the website to create API Key with proper 
 
 You can manage your API Key in UI or by [Authenticating API](rest-api/authenticating.md). See the [Authentication Guide](guides/authentication-guide.md)
 
-Every user can create API Keys, each can be applied with either permission below:
+Every user can create at  API Keys, each can be applied with either permission below:
 
 * Read permission: It is used to query the data, such as order query, trade query.
 * Trade permission: It is used to create order, cancel order and transfer, etc.
