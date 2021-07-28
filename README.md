@@ -54,7 +54,7 @@ The funds are debited centrally and directly upon execution of the order. You do
 
 If you have any other questions on API, or a question about getting an API key,  you can contact us by below ways:
 
-* Send email to [**hello@nebulaecn.com**](mailto:hello@nebulaecn.com)\*\*\*\*
+* Send email to [**support@nebulaecn.com**](mailto:hello@nebulaecn.com)\*\*\*\*
 
 
 

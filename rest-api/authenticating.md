@@ -390,7 +390,7 @@ Delete an api key for specific service account
 | 401 | Invalid bearer token |
 | 404 | Record is not found |
 
-#### /api/v2/auth/resource/service\_accounts/api\_keys <a id="api-v2-barong-resource-service_accounts-api_keys"></a>
+#### /api/v2/barong/resource/service\_accounts/api\_keys <a id="api-v2-barong-resource-service_accounts-api_keys"></a>
 
 **POST**
 
@@ -439,7 +439,7 @@ List all api keys for specific service account.
 | 400 | Require 2FA and totp code |  |
 | 401 | Invalid bearer token |  |
 
-#### /api/v2/auth/resource/service\_accounts <a id="api-v2-barong-resource-service_accounts"></a>
+#### /api/v2/barong/resource/service\_accounts <a id="api-v2-barong-resource-service_accounts"></a>
 
 **GET**
 
@@ -461,7 +461,7 @@ List all service accounts for current user.
 | :--- | :--- |
 | BearerToken |  |
 
-#### /api/v2/auth/resource/data\_storage <a id="api-v2-barong-resource-data_storage"></a>
+#### /api/v2/barong/resource/data\_storage <a id="api-v2-barong-resource-data_storage"></a>
 
 **POST**
 
@@ -484,7 +484,7 @@ Create data storage
 | 401 | Invalid bearer token |
 | 422 | Validation errors |
 
-#### /api/v2/auth/resource/api\_keys <a id="api-v2-barong-resource-api_keys"></a>
+#### /api/v2/barong/resource/api\_keys <a id="api-v2-barong-resource-api_keys"></a>
 
 **GET**
 
@@ -532,7 +532,7 @@ Create an api key
 | 401 | Invalid bearer token |  |
 | 422 | Validation errors |  |
 
-#### /api/v2/auth/resource/api\_keys/{kid} <a id="api-v2-barong-resource-api_keys-kid"></a>
+#### /api/v2/barong/resource/api\_keys/{kid} <a id="api-v2-barong-resource-api_keys-kid"></a>
 
 **DELETE**
 
@@ -581,7 +581,7 @@ Updates an api key
 | 404 | Record is not found |  |
 | 422 | Validation errors |  |
 
-#### /api/v2/auth/resource/otp/verify <a id="api-v2-barong-resource-otp-verify"></a>
+#### /api/v2/barong/resource/otp/verify <a id="api-v2-barong-resource-otp-verify"></a>
 
 **POST**
 
@@ -604,7 +604,7 @@ Verify 2FA code
 | 401 | Invalid bearer token |
 | 422 | Validation errors |
 
-#### /api/v2/auth/resource/otp/disable <a id="api-v2-barong-resource-otp-disable"></a>
+#### /api/v2/barong/resource/otp/disable <a id="api-v2-barong-resource-otp-disable"></a>
 
 **POST**
 
@@ -627,7 +627,7 @@ Disable 2FA
 | 401 | Invalid bearer token |
 | 422 | Validation errors |
 
-#### /api/v2/auth/resource/otp/enable <a id="api-v2-barong-resource-otp-enable"></a>
+#### /api/v2/barong/resource/otp/enable <a id="api-v2-barong-resource-otp-enable"></a>
 
 **POST**
 
@@ -650,7 +650,7 @@ Enable 2FA
 | 401 | Invalid bearer token |
 | 422 | Validation errors |
 
-#### /api/v2/auth/resource/otp/generate\_qrcode <a id="api-v2-barong-resource-otp-generate_qrcode"></a>
+#### /api/v2/barong/resource/otp/generate\_qrcode <a id="api-v2-barong-resource-otp-generate_qrcode"></a>
 
 **POST**
 
@@ -666,7 +666,7 @@ Generate qr code for 2FA
 | 400 | 2FA has been enabled for this account |
 | 401 | Invalid bearer token |
 
-#### /api/v2/auth/resource/phones/verify <a id="api-v2-barong-resource-phones-verify"></a>
+#### /api/v2/barong/resource/phones/verify <a id="api-v2-barong-resource-phones-verify"></a>
 
 **POST**
 
@@ -690,7 +690,7 @@ Verify a phone
 | 401 | Invalid bearer token |  |
 | 404 | Record is not found |  |
 
-#### /api/v2/auth/resource/phones/send\_code <a id="api-v2-barong-resource-phones-send_code"></a>
+#### /api/v2/barong/resource/phones/send\_code <a id="api-v2-barong-resource-phones-send_code"></a>
 
 **POST**
 
@@ -715,7 +715,7 @@ Resend activation code
 | 404 | Record is not found |
 | 422 | Validation errors |
 
-#### /api/v2/auth/resource/phones <a id="api-v2-barong-resource-phones"></a>
+#### /api/v2/barong/resource/phones <a id="api-v2-barong-resource-phones"></a>
 
 **POST**
 
@@ -753,7 +753,7 @@ Returns list of user's phones
 | 200 | Returns list of user's phones | [API\_V2\_Entities\_Phone](https://www.openware.com/sdk/2.6/docs/barong/api/barong-user-api-v2.html#api_v2_entities_phone) |
 | 401 | Invalid bearer token |  |
 
-#### /api/v2/auth/resource/documents <a id="api-v2-barong-resource-documents"></a>
+#### /api/v2/barong/resource/documents <a id="api-v2-barong-resource-documents"></a>
 
 **POST**
 
@@ -795,7 +795,7 @@ Return current user documents list
 | 200 | Return current user documents list | [API\_V2\_Entities\_Document](https://www.openware.com/sdk/2.6/docs/barong/api/barong-user-api-v2.html#api_v2_entities_document) |
 | 401 | Invalid bearer token |  |
 
-#### /api/v2/auth/resource/profiles <a id="api-v2-barong-resource-profiles"></a>
+#### /api/v2/barong/resource/profiles <a id="api-v2-barong-resource-profiles"></a>
 
 **PUT**
 
@@ -855,7 +855,7 @@ Create a profile for current\_user
 | 409 | Profile already exists |  |
 | 422 | Validation errors |  |
 
-#### /api/v2/auth/resource/profiles/me <a id="api-v2-barong-resource-profiles-me"></a>
+#### /api/v2/barong/resource/profiles/me <a id="api-v2-barong-resource-profiles-me"></a>
 
 **GET**
 
@@ -871,7 +871,7 @@ Return profiles of current resource owner
 | 401 | Invalid bearer token |  |
 | 404 | User has no profile |  |
 
-#### /api/v2/auth/resource/labels/{key} <a id="api-v2-barong-resource-labels-key"></a>
+#### /api/v2/barong/resource/labels/{key} <a id="api-v2-barong-resource-labels-key"></a>
 
 **DELETE**
 
@@ -938,7 +938,7 @@ Return a label by key.
 | 401 | Invalid bearer token |  |
 | 404 | Record is not found |  |
 
-#### /api/v2/auth/resource/labels <a id="api-v2-barong-resource-labels"></a>
+#### /api/v2/barong/resource/labels <a id="api-v2-barong-resource-labels"></a>
 
 **POST**
 
@@ -981,7 +981,7 @@ List all labels for current user.
 | 200 | List all labels for current user. | [API\_V2\_Entities\_Label](https://www.openware.com/sdk/2.6/docs/barong/api/barong-user-api-v2.html#api_v2_entities_label) |
 | 401 | Invalid bearer token |  |
 
-#### /api/v2/auth/resource/users/password <a id="api-v2-barong-resource-users-password"></a>
+#### /api/v2/barong/resource/users/password <a id="api-v2-barong-resource-users-password"></a>
 
 **PUT**
 
@@ -1006,7 +1006,7 @@ Sets new account password
 | 404 | Record is not found |
 | 422 | Validation errors |
 
-#### /api/v2/auth/resource/users/activity/{topic} <a id="api-v2-barong-resource-users-activity-topic"></a>
+#### /api/v2/barong/resource/users/activity/{topic} <a id="api-v2-barong-resource-users-activity-topic"></a>
 
 **GET**
 
@@ -1031,7 +1031,7 @@ Returns user activity
 | :--- | :--- | :--- |
 | 200 | Returns user activity | [API\_V2\_Entities\_Activity](https://www.openware.com/sdk/2.6/docs/barong/api/barong-user-api-v2.html#api_v2_entities_activity) |
 
-#### /api/v2/auth/resource/users/me <a id="api-v2-barong-resource-users-me"></a>
+#### /api/v2/barong/resource/users/me <a id="api-v2-barong-resource-users-me"></a>
 
 **DELETE**
 
@@ -1082,7 +1082,7 @@ Returns current user
 | :--- | :--- | :--- |
 | 200 | Returns current user | [API\_V2\_Entities\_UserWithFullInfo](https://www.openware.com/sdk/2.6/docs/barong/api/barong-user-api-v2.html#api_v2_entities_userwithfullinfo) |
 
-#### /api/v2/auth/resource/addresses <a id="api-v2-barong-resource-addresses"></a>
+#### /api/v2/barong/resource/addresses <a id="api-v2-barong-resource-addresses"></a>
 
 **POST**
 
@@ -1109,7 +1109,7 @@ Upload a new address approval document for current user
 | 401 | Invalid bearer token |
 | 422 | Validation errors |
 
-#### /api/v2/auth/public/configs/auth0 <a id="api-v2-barong-public-configs-auth0"></a>
+#### /api/v2/barong/public/configs/auth0 <a id="api-v2-barong-public-configs-auth0"></a>
 
 **GET**
 
@@ -1123,35 +1123,35 @@ Get auth0 configuration
 | :--- | :--- |
 | 200 | Get auth0 configuration |
 
-#### /api/v2/auth/public/configs <a id="api-v2-barong-public-configs"></a>
+#### /api/v2/barong/public/configs <a id="api-v2-barong-public-configs"></a>
 
 **GET**
 
 **Description**
 
-Get auth configurations
+Get barong configurations
 
 **Responses**
 
 | Code | Description |
 | :--- | :--- |
-| 200 | Get auth configurations |
+| 200 | Get barong configurations |
 
-#### /api/v2/auth/public/version <a id="api-v2-barong-public-version"></a>
+#### /api/v2/barong/public/version <a id="api-v2-barong-public-version"></a>
 
 **GET**
 
 **Description**
 
-Get auth version
+Get barong version
 
 **Responses**
 
 | Code | Description |
 | :--- | :--- |
-| 200 | Get auth version |
+| 200 | Get barong version |
 
-#### /api/v2/auth/public/time <a id="api-v2-barong-public-time"></a>
+#### /api/v2/barong/public/time <a id="api-v2-barong-public-time"></a>
 
 **GET**
 
@@ -1165,7 +1165,7 @@ Get server current unix timestamp.
 | :--- | :--- |
 | 200 | Get server current unix timestamp. |
 
-#### /api/v2/auth/public/ping <a id="api-v2-barong-public-ping"></a>
+#### /api/v2/barong/public/ping <a id="api-v2-barong-public-ping"></a>
 
 **GET**
 
@@ -1179,7 +1179,7 @@ Test connectivity
 | :--- | :--- |
 | 200 | Test connectivity |
 
-#### /api/v2/auth/public/password/validate <a id="api-v2-barong-public-password-validate"></a>
+#### /api/v2/barong/public/password/validate <a id="api-v2-barong-public-password-validate"></a>
 
 **POST**
 
@@ -1199,7 +1199,7 @@ Password strength testing
 | :--- | :--- |
 | 201 | Password strength testing |
 
-#### /api/v2/auth/public/kyc <a id="api-v2-barong-public-kyc"></a>
+#### /api/v2/barong/public/kyc <a id="api-v2-barong-public-kyc"></a>
 
 **POST**
 
