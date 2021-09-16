@@ -148,13 +148,27 @@ POST https://trade.nebulaecn.com/api/v2/trading/market/orders
 | 422 | Invalid request, make sure every mandatory fields are present |
 | 500 | Internal Server Error |
 
-#### Example
+#### Example Request
 
 ```text
 curl -X POST https://trade.nebulaecn.com/api/v2/trading/market/orders \
   --data '{"market":"btcusd", "amount":"1.0","type":"limit", "side":"sell", "price":"1"}' \
   -H 'Content-Type: application/json'
-{"uuid":"b436163d-5c73-11ea-be71-1831bf9834b0","side":"sell","type":"limit","market_id":"btcusd","volume":"1","price":"1","state":"pending","created_at":1583146260
+```
+
+#### Example Answer \(JSON\)
+
+```text
+{
+ "uuid":"b436163d-5c73-11ea-be71-1831bf9834b0",
+ "side":"sell",
+ "type":"limit",
+ "market_id":"btcusd",
+ "volume":"1",
+ "price":"1",
+ "state":"pending",
+ "created_at":1583146260
+ }
 ```
 
 ## Create a list of orders
