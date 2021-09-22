@@ -16,37 +16,65 @@ List of supported private streams \(requires authentication\): \* [`order`](http
 
 You can find a format of these events below in the doc.
 
+###  <a id="subscribe-to-streams"></a>
+
 ### Authentication <a id="subscribe-to-streams"></a>
 
-Authentication happens on websocket message with following JSON structure.
+1.Get authentication cookie using REST API method with the following request:
+
+**POST**‌
+
+**Description**‌
+
+Start a new session‌
+
+**Parameters**
+
+| Name | Located in | Description | Required | Schema |
+| :--- | :--- | :--- | :--- | :--- |
+| email | formData | ​Content | Yes | string |
+| password | formData | ​Content | Yes | string |
+| captcha\_response | formData | Response from captcha widget | No | string |
+| otp\_code | formData | Code from Google Authenticator | No | string |
+
+**Responses**
+
+| Code | Description |
+| :--- | :--- |
+| 201 | Start a new session |
+| 400 | Required params are empty |
+| 404 | Record is not found |
+
+
+
+‌2.Use received cookie for the private WebSockets connection. Example:
 
 ```text
-{
-  "jwt": "Bearer <Token>"
-}
+curl -H "Cookie:_nebulaecn_session=3ef9xxxxxxxxxxxxxxxx" -i -N \
+ -H "Connection: Upgrade"  -H "Upgrade: websocket" \
+ -H "Host: trade.nebulaecn.com" -H "Origin: https://trade.nebulaecn.com" \
+ wss://trade.nebulaecn.com/api/v2/stream/private/?stream=balances \ 
+ &stream=deposit_address&stream=order&stream=trade
 ```
 
-If authentication was done, server will respond successfully
+3.If authentication was done, server will respond successfully.
 
 ```text
 {
   "success": {
-    "message": "Authenticated."
-  }
+    "message": "subscribed",
+    "streams": [
+                "balances","order","trade"
+                ]
+    }
 }
 ```
 
-Otherwise server will return an error
+Otherwise server will return an error: 
 
-```text
-{
-  "error": {
-    "message": "Authentication failed."
-  }
-}
-```
+`Status Code: 401 Unauthorized`
 
-If authentication JWT token has invalid type, server return an error
+If authentication JWT token has invalid type, server return an error:
 
 ```text
 {
@@ -56,7 +84,7 @@ If authentication JWT token has invalid type, server return an error
 }
 ```
 
-If other error occurred during the message handling server throws an error
+If other error occurred during the message handling server throws an error:
 
 ```text
 {
@@ -66,15 +94,7 @@ If other error occurred during the message handling server throws an error
 }
 ```
 
-**Note:** Websocket API supports authentication only Bearer type of JWT token.
 
-**Example** of authentication message:
-
-```text
-{
-  "jwt": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ"
-}
-```
 
 ### Streams subscription <a id="subscribe-to-streams"></a>
 
