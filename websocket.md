@@ -248,11 +248,9 @@ Here is structure of `Trade` event:
 | `created_at` | Trade create time. |
 | `order_id` | User order identifier in trade. |
 
-
-
-Websocket API is mounted at `/api/v2/trading`. If you pass a JWT header, your connection will be authenticated, otherwise it will be considered anonymous.
-
 ### Subscribe to streams <a id="subscribe-to-streams"></a>
+
+Websocket API is located at `https://nebulaecn.com/api/v2/trading`. If you pass a JWT header, your connection will be authenticated, otherwise it will be considered anonymous.
 
 Example
 
@@ -410,5 +408,112 @@ Example
 | Fee Unit | "btc" |
 | Timestamp | 1594392250 |
 
-## 
+### Create order <a id="create-order"></a>
+
+Arguments:
+
+| Arg | Comment |
+| :--- | :--- |
+| Market |  |
+| Type | M is Market L is Limit P is PostOnly |
+| Side | buy or sell |
+| amount | sting, int, float |
+| price | ignored for market order |
+
+Responds with ok and uuid of new order if order is pushed to engine. Response with error and short description in case of failure.
+
+Example
+
+```text
+[1, 42, "create_order", ["btcusd", "m", "sell", "0.250000", "9120.00"]]
+```
+
+Response
+
+```text
+[2, 42, "create_order", ["4fec493d-c2a2-11ea-b670-1831bf9834b0"]]
+```
+
+### Cancel order <a id="cancel-order"></a>
+
+Arguments:
+
+| Arg | Desc |
+| :--- | :--- |
+| Mode | id, uuid, market, all\(any market\) |
+| ID | ID, UUID or market ID respectively |
+
+**NOTE:** cancels multiple orders for "market" and "all"
+
+Example
+
+```text
+[1, 42, "cancel_order", ["market", "btcusd"]]
+```
+
+Response
+
+```text
+[2, 42, "cancel_order", null]
+```
+
+### Bulk order create <a id="bulk-order-create"></a>
+
+Arguments: array or _Create order_ params
+
+Responds with array of:
+
+* uuid for crated order
+* "error" if some error ocurred
+
+Example
+
+```text
+[
+  1,
+  42,
+  "create_bulk",
+  [
+    ["btcusd", "l", "buy", "0.250000", "9120.00"],
+    ["btcusd", "l", "sell", "0.250000", "9120.00"]
+  ]
+]
+```
+
+Response
+
+```text
+[
+  2,
+  42,
+  "create_bulk",
+  [
+    "04852bd8-c2a3-11ea-b670-1831bf9834b0",
+    "04855535-c2a3-11ea-b670-1831bf9834b0"
+  ]
+]
+```
+
+### Bulk order cancel <a id="bulk-order-cancel"></a>
+
+Arguments:
+
+| Arg | Desc |
+| :--- | :--- |
+| Mode | id or uuid |
+| \[ID\] | List of IDs or UUIDs respectively |
+
+Echoes argument or puts error for argument which could not be parsed.
+
+Example
+
+```text
+[1, 42, "cancel_bulk", ["id", [12, "13", "abv"]]]
+```
+
+Response
+
+```text
+[2, 42, "cancel_bulk", [12, 13, "error"]]
+```
 

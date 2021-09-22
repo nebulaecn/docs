@@ -9,7 +9,7 @@ Get assets pnl calculated into one currency
 #### HttpRequest
 
 ```text
-GET https://trade.nebulaecn.com/api/v2/backend/account/stats/pnl
+GET https://trade.nebulaecn.com/api/v2/auth/account/stats/pnl
 ```
 
 **Parameters**
@@ -33,7 +33,7 @@ Get your transactions history.
 #### HttpRequest
 
 ```text
-GET https://trade.nebulaecn.com/api/v2/backend/account/transactions
+GET https://trade.nebulaecn.com/api/v2/auth/account/transactions
 ```
 
 **Parameters**
@@ -65,7 +65,7 @@ Creates new withdrawal to active beneficiary.
 #### HttpRequest
 
 ```text
-POST https://trade.nebulaecn.com/api/v2/backend/account/withdraws
+POST https://trade.nebulaecn.com/api/v2/auth/account/withdraws
 ```
 
 **Parameters**
@@ -93,7 +93,7 @@ List your withdraws as paginated collection.
 #### HttpRequest
 
 ```text
-GET https://trade.nebulaecn.com/api/v2/backend/account/withdraws
+GET https://trade.nebulaecn.com/api/v2/auth/account/withdraws
 ```
 
 **Parameters**
@@ -121,7 +121,7 @@ Returns withdrawal sums for last 4 hours and 1 month
 #### HttpRequest
 
 ```text
-GET https://trade.nebulaecn.com/api/v2/backend/account/withdraws/sums
+GET https://trade.nebulaecn.com/api/v2/auth/account/withdraws/sums
 ```
 
 **Responses**
@@ -139,7 +139,7 @@ Delete beneficiary
 #### HttpRequest
 
 ```text
-DELETE https://trade.nebulaecn.com/api/v2/backend/account/beneficiaries/{id}
+DELETE https://trade.nebulaecn.com/api/v2/auth/account/beneficiaries/{id}
 ```
 
 **Parameters**
@@ -163,7 +163,7 @@ Get beneficiary by ID
 #### HttpRequest
 
 ```text
-GET https://trade.nebulaecn.com/api/v2/backend/account/beneficiaries/{id}
+GET https://trade.nebulaecn.com/api/v2/auth/account/beneficiaries/{id}
 ```
 
 **Parameters**
@@ -187,7 +187,7 @@ Activates beneficiary with pin
 #### HttpRequest
 
 ```text
-PATCH https://trade.nebulaecn.com/api/v2/backend/account/beneficiaries/{id}/activate
+PATCH https://trade.nebulaecn.com/api/v2/auth/account/beneficiaries/{id}/activate
 ```
 
 **Parameters**
@@ -212,7 +212,7 @@ Resend beneficiary pin
 #### HttpRequest
 
 ```text
-PATCH https://trade.nebulaecn.com/api/v2/backend/account/beneficiaries/{id}/resend_pin
+PATCH https://trade.nebulaecn.com/api/v2/auth/account/beneficiaries/{id}/resend_pin
 ```
 
 **Parameters**
@@ -236,7 +236,7 @@ Create new beneficiary
 #### HttpRequest
 
 ```text
-POST https://trade.nebulaecn.com/api/v2/backend/account/beneficiaries
+POST https://trade.nebulaecn.com/api/v2/auth/account/beneficiaries
 ```
 
 **Parameters**
@@ -263,7 +263,7 @@ Get list of user beneficiaries
 #### HttpRequest
 
 ```text
-GET https://trade.nebulaecn.com/api/v2/backend/account/beneficiaries
+GET https://trade.nebulaecn.com/api/v2/auth/account/beneficiaries
 ```
 
 **Parameters**
@@ -288,7 +288,7 @@ Returns deposit address for account you want to deposit to by currency. The addr
 #### HttpRequest
 
 ```text
-GET https://trade.nebulaecn.com/api/v2/backend/account/deposit_address/{currency}
+GET https://trade.nebulaecn.com/api/v2/auth/account/deposit_address/{currency}
 ```
 
 **Parameters**
@@ -313,7 +313,7 @@ Get details of specific deposit.
 #### HttpRequest
 
 ```text
-GET https://trade.nebulaecn.com/api/v2/backend/account/deposits/{txid}
+GET https://trade.nebulaecn.com/api/v2/auth/account/deposits/{txid}
 ```
 
 **Parameters**
@@ -337,7 +337,7 @@ Get your deposits history.
 #### HttpRequest
 
 ```text
-GET https://trade.nebulaecn.com/api/v2/backend/account/deposits
+GET https://trade.nebulaecn.com/api/v2/auth/account/deposits
 ```
 
 **Parameters**
@@ -365,7 +365,7 @@ Get user account by currency
 #### HttpRequest
 
 ```text
-GET https://trade.nebulaecn.com/api/v2/backend/account/balances/{currency}
+GET https://trade.nebulaecn.com/api/v2/auth/account/balances/{currency}
 ```
 
 **Parameters**
@@ -389,7 +389,7 @@ Get list of user accounts
 #### HttpRequest
 
 ```text
-GET https://trade.nebulaecn.com/api/v2/backend/account/balances/
+GET https://trade.nebulaecn.com/api/v2/auth/account/balances/
 ```
 
 **Parameters**
