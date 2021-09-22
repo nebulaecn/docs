@@ -257,7 +257,7 @@ Destroy current session‌
 
 ‌
 
-**POST**‌
+#### POST‌
 
 **Description**‌
 
