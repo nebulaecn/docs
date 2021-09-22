@@ -239,7 +239,7 @@ Auth0 authentication by id\_token‌
 
 #### /api/v2/auth/identity/sessions <a id="api-v2-barong-identity-sessions"></a>
 
-‌
+
 
 **DELETE**‌
 

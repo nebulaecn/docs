@@ -22,6 +22,8 @@ You can find a format of these events below in the doc.
 
 1.Get authentication cookie using REST API method with the following request:
 
+#### /api/v2/auth/identity/sessions <a id="api-v2-barong-identity-sessions"></a>
+
 **POST**‌
 
 **Description**‌
