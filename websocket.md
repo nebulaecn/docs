@@ -12,7 +12,7 @@ GET request parameters:
 
 List of supported public streams: \* `<market>.ob-inc` market order-book update \* `<market>.trades` \* `<market>.kline-PERIOD` \(available periods are "1m", "5m", "15m", "30m", "1h", "2h", "4h", "6h", "12h", "1d", "3d", "1w"\) \* `global.tickers`
 
-List of supported private streams \(requires authentication\): \* [`order`](https://www.openware.com/sdk/docs/peatio/api/websocket-api.html#order) \* [`trade`](https://www.openware.com/sdk/docs/peatio/api/websocket-api.html#trade)
+List of supported private streams \(requires authentication\): \* `order` \* `trade`
 
 You can find a format of these events below in the doc.
 
