@@ -10,7 +10,7 @@ GET request parameters:
 | :--- | :--- | :--- |
 | `stream` | List of streams to be subscribed on | Yes |
 
-List of supported public streams: \* [`<market>.ob-inc`](https://www.openware.com/sdk/docs/peatio/api/websocket-api.html#order-book) market order-book update \* [`<market>.trades` ](https://www.openware.com/sdk/docs/peatio/api/websocket-api.html#trades)\* [`<market>.kline-PERIOD` ](https://www.openware.com/sdk/docs/peatio/api/websocket-api.html#kline-point)\(available periods are "1m", "5m", "15m", "30m", "1h", "2h", "4h", "6h", "12h", "1d", "3d", "1w"\) \* [`global.tickers`](https://www.openware.com/sdk/docs/peatio/api/websocket-api.html#tickers)
+List of supported public streams: \* `<market>.ob-inc` market order-book update \* `<market>.trades` \* `<market>.kline-PERIOD` \(available periods are "1m", "5m", "15m", "30m", "1h", "2h", "4h", "6h", "12h", "1d", "3d", "1w"\) \* `global.tickers`
 
 List of supported private streams \(requires authentication\): \* [`order`](https://www.openware.com/sdk/docs/peatio/api/websocket-api.html#order) \* [`trade`](https://www.openware.com/sdk/docs/peatio/api/websocket-api.html#trade)
 
