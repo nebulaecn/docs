@@ -20,41 +20,60 @@ You can find a format of these events below in the doc.
 
 ### Authentication <a id="subscribe-to-streams"></a>
 
-1.Get authentication cookie using REST API method with the following request:
-
-#### /api/v2/auth/identity/sessions <a id="api-v2-barong-identity-sessions"></a>
-
-**POST**‌
-
-**Description**‌
-
-Start a new session‌
-
-**Parameters**
-
-| Name | Located in | Description | Required | Schema |
-| :--- | :--- | :--- | :--- | :--- |
-| email | formData | ​Content | Yes | string |
-| password | formData | ​Content | Yes | string |
-| captcha\_response | formData | Response from captcha widget | No | string |
-| otp\_code | formData | Code from Google Authenticator | No | string |
-
-**Responses**
-
-| Code | Description |
-| :--- | :--- |
-| 201 | Start a new session |
-| 400 | Required params are empty |
-| 404 | Record is not found |
-
-
-
-‌2.Use received cookie for the private WebSockets connection. Example:
+JS Example
 
 ```text
-curl -H "Cookie:_nebulaecn_session=3ef9xxxxxxxxxxxxxxxx" -i -N \
- -H "Connection: Upgrade"  -H "Upgrade: websocket" \
- -H "Host: trade.nebulaecn.com" -H "Origin: https://trade.nebulaecn.com" \
+const CryptoJS = require("crypto-js");
+var WebSocketClient = require('websocket').client
+
+var client = new WebSocketClient();
+client.on('connectFailed', function (error) {
+  console.log('Connect Error: ' + error.toString());
+});
+
+client.on('connect', function (connection) {
+  console.log('WebSocket Client Connected');
+  connection.on('error', function (error) {
+    console.log("Connection Error: " + error.toString());
+  });
+  connection.on('close', function () {
+    console.log('echo-protocol Connection Closed');
+  });
+  connection.on('message', function (message) {
+    if (message.type === 'utf8') {
+      console.log("Received: '" + message.utf8Data + "'");
+    }
+  });
+});
+
+let nonce = 0;
+const d = new Date();
+const timestamp = d.getTime();
+nonce = timestamp;
+const apiKey = "8df7dxxxx"
+const secret = "177e099e5e04xxxx";
+const h = CryptoJS.HmacSHA256(nonce +apiKey, secret).toString(CryptoJS.digest);
+
+const headers = {};
+headers['X-Auth-Apikey'] = '8df7d07e2fxxxx';
+headers['X-Auth-Nonce'] = nonce;
+headers['X-Auth-Signature'] = h;
+
+client.connect('wss://trade.nebulaecn.com/api/v2/strean/private/ \
+?stream=balances&stream=order&stream=trade', null, null, headers);
+
+```
+
+
+
+‌1.Use API Key for the private WebSockets connection. Example:
+
+```text
+curl -H "X-Auth-Apikey:8df7d07e2fxxxx" \
+-H "X-Auth-Nonce:1632499941797" \
+-H "X-Auth-Signature:96855ae3985bc3b0da3429ea4bada6985b30e181e49dd4beccdxxx"
+ -H "Connection: Upgrade"  -H "Upgrade: websocket"  -H "Host: trade.nebulaecn.com" \
+ -H "Origin: https://trade.nebulaecn.com" -i -N \
  wss://trade.nebulaecn.com/api/v2/stream/private/?stream=balances \ 
  &stream=deposit_address&stream=order&stream=trade
 ```
@@ -75,16 +94,6 @@ curl -H "Cookie:_nebulaecn_session=3ef9xxxxxxxxxxxxxxxx" -i -N \
 Otherwise server will return an error: 
 
 `Status Code: 401 Unauthorized`
-
-If authentication JWT token has invalid type, server return an error:
-
-```text
-{
-  "error": {
-    "message": "Token type is not provided or invalid."
-  }
-}
-```
 
 If other error occurred during the message handling server throws an error:
 
