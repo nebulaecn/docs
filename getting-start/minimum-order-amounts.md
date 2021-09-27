@@ -6,48 +6,46 @@ description: >-
 
 # Minimum Order Amounts
 
-
-
 | Pair | Minimum Order Amount |
 | :--- | :--- |
 | adabtc | 25 |
 | adaeth | 25 |
-| adaeur | 500 |
-| adausd | 500 |
-| adausdt | 500 |
-| bchbtc | 0.1 |
+| adaeur | 25 |
+| adausd | 25 |
+| adausdt | 25 |
+| bchbtc | 0.02 |
 | bcheth | 0.02 |
-| bcheur | 0.07 |
-| bchusd | 0.07 |
+| bcheur | 0.02 |
+| bchusd | 0.02 |
 | bchusdt | 0.02 |
 | bnbbtc | 0.01 |
 | bnbeth | 0.01 |
 | bnbeur | 0.001 |
 | bnbusdt | 0.001 |
-| btceur | 0.002 |
-| btcrub | 0.002 |
-| btcusd | 0.002 |
-| btcusdt | 0.002 |
+| btceur | 0.0002 |
+| btcrub | 0 |
+| btcusd | 0.0002 |
+| btcusdt | 0.0002 |
 | dotbtc | 0.5 |
 | doteth | 0.5 |
 | doteur | 0.5 |
 | dotusd | 0.5 |
 | dotusdt | 0.5 |
-| ethbtc | 0.13 |
-| etheur | 0.1 |
-| ethusd | 0.1 |
-| ethusdt | 0.1 |
+| ethbtc | 0.001 |
+| etheur | 0.005 |
+| ethusd | 0.006 |
+| ethusdt | 0.005 |
 | eurusdt | 0.01 |
 | linkbtc | 0.5 |
 | linketh | 0.5 |
 | linkeur | 0.5 |
 | linkusd | 0.5 |
 | linkusdt | 0.5 |
-| ltcbtc | 0.5 |
+| ltcbtc | 0.05 |
 | ltceth | 0.05 |
-| ltceur | 0.5 |
-| ltcusd | 0.5 |
-| ltcusdt | 0.5 |
+| ltceur | 0.05 |
+| ltcusd | 0.05 |
+| ltcusdt | 0.05 |
 | unibtc | 1 |
 | unieth | 1 |
 | unieur | 1 |
@@ -58,9 +56,11 @@ description: >-
 | xlmeur | 0.1 |
 | xlmusd | 28 |
 | xlmusdt | 0.1 |
-| xrpbtc | 150 |
+| xrpbtc | 20 |
 | xrpeth | 20 |
-| xrpeur | 100 |
-| xrpusd | 100 |
-| xrpusdt | 100 |
+| xrpeur | 20 |
+| xrpusd | 20 |
+| xrpusdt | 20 |
+
+
 
