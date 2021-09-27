@@ -1,7 +1,8 @@
 # Table of contents
 
 * [Introduction](README.md)
-* [Getting Started](getting-start.md)
+* [Getting Started](getting-start/README.md)
+  * [Minimum Order Amounts](getting-start/minimum-order-amounts.md)
 * [REST API](rest-api/README.md)
   * [Reference Data](rest-api/reference-data.md)
   * [Market Data](rest-api/market-data.md)
