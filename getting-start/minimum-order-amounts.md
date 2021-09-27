@@ -34,7 +34,7 @@ description: >-
 | ethbtc | 0.001 |
 | etheur | 0.005 |
 | ethusd | 0.006 |
-| ethusdt | 0.005 |
+| ethusdt | 0.02 |
 | eurusdt | 0.01 |
 | linkbtc | 0.5 |
 | linketh | 0.5 |
